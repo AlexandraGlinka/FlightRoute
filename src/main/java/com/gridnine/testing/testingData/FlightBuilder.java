@@ -1,4 +1,7 @@
-package com.gridnine.testing;
+package com.gridnine.testing.testingData;
+
+import com.gridnine.testing.entity.Flight;
+import com.gridnine.testing.entity.Segment;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -9,8 +12,8 @@ import java.util.List;
  * Factory class to get sample list of flights.
  * Фабрика для получения тестового списка перелетов
  */
-class FlightBuilder {
-    static List<Flight> createFlights() {
+public class FlightBuilder {
+    public static List<Flight> createFlights() {
         LocalDateTime threeDaysFromNow = LocalDateTime.now().plusDays(3);
         return Arrays.asList(
                 /**
@@ -46,7 +49,7 @@ class FlightBuilder {
                  */
                 createFlight(threeDaysFromNow, threeDaysFromNow.plusHours(2),
                         threeDaysFromNow.plusHours(5), threeDaysFromNow.plusHours(6)),
-                //TODO необходимо исключить из тестового набора полеты
+                //TODO необходимо исключить из тестового набора
 
                 /**
                  * Another flight with more than two hours ground time

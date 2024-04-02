@@ -1,4 +1,6 @@
-package com.gridnine.testing;
+package com.gridnine.testing.entity;
+
+import com.gridnine.testing.entity.Segment;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -6,10 +8,10 @@ import java.util.stream.Collectors;
 /**
  * Bean that represents a flight.
  */
-class Flight {
+public class Flight {
     private final List<Segment> segments;
 
-    Flight(final List<Segment> segs) {
+    public Flight(final List<Segment> segs) {
         segments = segs;
     }
 
