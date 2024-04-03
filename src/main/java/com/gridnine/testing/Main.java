@@ -15,12 +15,15 @@ public class Main {
         flights.forEach(System.out::println);
         System.out.println(separator());
 
-        System.out.println("Правило исключения 1: Вылет до текущего момента времени.");
-        List<Flight> filteredFlights = new FlightFilterImpl().filterBeforeNow(flights);
-        filteredFlights.forEach(System.out::println);
-        System.out.println(separator());
+//        System.out.println("Правило исключения 1: Вылет до текущего момента времени.");
+//        List<Flight> filteredFlightsBeforeNow = new FlightFilterImpl().filterBeforeNow(flights);
+//        filteredFlightsBeforeNow.forEach(System.out::println);
+//        System.out.println(separator());
 
         System.out.println("Правило исключения 2: Сегменты с датой прилёта раньше даты вылета.");
+        List<Flight> filteredFlightsArrivalBeforeDepart = new FlightFilterImpl().filterArrivalBeforeDeparture(flights);
+        filteredFlightsArrivalBeforeDepart.forEach(System.out::println);
+        System.out.println(separator());
     }
 
     public static String separator() {
