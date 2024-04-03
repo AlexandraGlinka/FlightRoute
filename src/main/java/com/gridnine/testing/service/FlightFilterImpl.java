@@ -12,7 +12,7 @@ public class FlightFilterImpl implements FlightFilter {
     public List<Flight> filterBeforeNow(List<Flight> flights) {
         List<Flight> filteredFlightsBeforeNow = flights.stream()
                 .filter(flight -> flight.getSegments().stream()
-                        .allMatch(segment -> segment.getDepartureDate().isBefore(LocalDateTime.now())))
+                        .allMatch(segment -> segment.getDepartureDate().isAfter(LocalDateTime.now())))
                 .collect(Collectors.toList());
         return filteredFlightsBeforeNow;
     }
