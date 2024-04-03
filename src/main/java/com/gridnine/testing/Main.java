@@ -1,7 +1,6 @@
 package com.gridnine.testing;
 
 import com.gridnine.testing.entity.Flight;
-import com.gridnine.testing.service.FlightFilter;
 import com.gridnine.testing.service.FlightFilterImpl;
 import com.gridnine.testing.testingData.FlightBuilder;
 
@@ -23,6 +22,11 @@ public class Main {
         System.out.println("Правило исключения 2: Сегменты с датой прилёта раньше даты вылета.");
         List<Flight> filteredFlightsArrivalBeforeDepart = new FlightFilterImpl().filterArrivalBeforeDeparture(flights);
         filteredFlightsArrivalBeforeDepart.forEach(System.out::println);
+        System.out.println(separator());
+
+        System.out.println("Правило исключения 3: Перелеты, где общее время, проведённое на земле, превышает два часа.");
+        List<Flight> filteredFlightsTransferExceedsTwoHours = new FlightFilterImpl().filterSumTransferExceedsTwoHours(flights);
+        filteredFlightsTransferExceedsTwoHours.forEach(System.out::println);
         System.out.println(separator());
     }
 
